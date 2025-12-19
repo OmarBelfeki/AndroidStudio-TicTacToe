@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#fafafa"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Principe du jeu X-O"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Le jeu X-O se joue sur une grille de 3 × 3 cases, où deux joueurs s’affrontent : l’un choisit le symbole X et l’autre le symbole O. À tour de rôle, chaque joueur place son symbole dans une case vide. Une partie se termine lorsqu’un joueur aligne trois symboles identiques sur une ligne, une colonne ou une diagonale, ou lorsque toutes les cases sont remplies sans qu’aucun joueur n’ait gagné, ce qui entraîne une partie nulle. Dans le cadre du tournoi, plusieurs parties se succèdent, et les scores sont cumulés automatiquement pour chaque joueur ainsi que pour les parties nulles."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tv_description2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="L’utilisateur choisit le nombre de parties du tournoi à l’aide d’un sélecteur, et à la fin de toutes les parties, le vainqueur du tournoi est affiché. Les scores du tournoi sont enregistrés dans un fichier interne afin de pouvoir être consultés ultérieurement via le bouton « Retrouver les scores du dernier tournoi », qui affiche le score du joueur X, le score du joueur O, le nombre de parties nulles, le nombre total de parties jouées et le vainqueur du tournoi."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_select_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de parties du tournoi"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <RadioGroup
+                android:id="@+id/partie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                >
+
+                <RadioButton
+                    android:id="@+id/part5"
+                    android:text="@string/_5_parties"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="24dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#000000"
+                    />
+
+                <RadioButton
+                    android:id="@+id/part10"
+                    android:text="@string/_10_parties"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="24dp"
+
+                    android:backgroundTint="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/part15"
+                    android:text="@string/_15_parties"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:backgroundTint="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_start_tournament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Démarrer le tournoi"
+            android:backgroundTint="#4892CA"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_retrieve_scores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrouver les scores du dernier tournoi"
+            android:backgroundTint="#ffffff"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_results_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Résultats du tournoi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_score_x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score joueur X: 0"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_score_o"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score joueur O: 0"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_draws"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parties nulles: 0"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parties jouées: 0"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_winner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vainqueur du tournoi: -"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

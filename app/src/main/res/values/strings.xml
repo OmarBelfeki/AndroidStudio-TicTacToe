@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="title">Tic-Tac-Toe Challenge</string>
+    <string name="ch_symbole">Choisissez votre symbole :</string>
+    <string name="X">X</string>
+    <string name="O">O</string>
+    <string name="nbr_partie">Nombre de parties du tournoi</string>
+    <string name="score">🏆 Score du dernier tournoi</string>
+    <string name="jouer">JOUER</string>
+    <string name="how">Principe du jeu</string>
+    <string name="_5_parties">5 parties</string>
+    <string name="_10_parties">10 parties</string>
+    <string name="_15_parties">15 parties</string>
+    <string name="aucun_tournoi_sauvegard">Aucun tournoi sauvegardé</string>
+
+    <string-array name="nomber_parties">
+        <item>5 parties</item>
+        <item>10 parties</item>
+        <item>15 parties</item>
+    </string-array>
+
+
+</resources>
